@@ -1,0 +1,90 @@
+body {
+  font-family: "Bebas Neue", sans-serif;
+  color: #FFFFFF;
+  background: #03060D;
+}
+
+.container {
+  max-width: 1730px;
+  padding: 0 15px;
+}
+
+a {
+  color: #FFFFFF;
+}
+
+button {
+  cursor: pointer;
+}
+
+input:focus {
+  border: 0;
+  outline: 0;
+}
+
+.btn-scroll {
+  font-size: 32px;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  padding: 21px 16px 21px 46px;
+  border-radius: 42px;
+}
+.btn-scroll img {
+  margin-left: 20px;
+}
+
+header.container {
+  padding: 56px 0 30px;
+}
+header.container .navbar-nav {
+  display: flex;
+  justify-content: flex-end;
+}
+header.container .navbar-nav .nav-item {
+  padding: 20px 40px;
+  font-size: 32px;
+  margin: 0 12px;
+  background: #0D1017;
+  border-radius: 42px;
+  font-style: italic;
+}
+header.container .navbar-nav .nav-item a {
+  width: inherit;
+}
+
+.banner {
+  padding-bottom: 132px;
+}
+.banner h1 {
+  font-size: 160px;
+  font-style: italic;
+  font-weight: 600;
+  margin-bottom: 136px;
+}
+.banner .description {
+  display: flex;
+  justify-content: space-between;
+}
+.banner .description .block-left p {
+  font-size: 48px;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+.banner .description .block-left span {
+  font-size: 24px;
+}
+.banner .description .block-right {
+  font-size: 64px;
+  font-style: italic;
+  max-width: 630px;
+  line-height: 64px;
+}
+
+.service {
+  padding: 88px 121px;
+}
+.service h3 {
+  font-size: 64px;
+  font-style: italic;
+}/*# sourceMappingURL=style.css.map */
