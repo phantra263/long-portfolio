@@ -1,13 +1,17 @@
+$lenght: 4;
+
 // css common
 body {
   font-family: 'Bebas Neue', sans-serif;
   color: $light;
   background: $dark;
+  overflow-x: hidden;
 }
 
 .container {
   max-width: 1730px;
   padding: 0 15px;
+  margin: 0 auto;
 }
 
 a {
@@ -16,6 +20,7 @@ a {
 
 button {
   cursor: pointer;
+  border: 0
 }
 
 input:focus {
@@ -30,29 +35,48 @@ input:focus {
   align-items: center;
   padding: 21px 16px 21px 46px;
   border-radius: 42px;
+  flex-shrink: 0;
   img {
     margin-left: 20px;
   }
 }
 
+// css scroll to top
+#return-to-top {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	background: #CF75D7;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	display: none;
+  text-align: center;
+  line-height: 50px;
+  color: $light;
+  font-weight: bold;
+	transition: all 0.3s ease;
+	z-index: 100;
+}
 
-header.container {
-  padding: 56px 0 30px;
-  .navbar-nav {
-    display: flex;
-    justify-content: flex-end;
-    .nav-item {
-      padding: 20px 40px;
-      font-size: 32px;
-      margin: 0 12px;
-      background: #0D1017;
-      border-radius: 42px;
-      font-style: italic;
-      a {
-        width: inherit;
-      }
+.navbar-nav {
+  display: flex;
+  justify-content: flex-end;
+  .nav-item {
+    padding: 20px 40px;
+    font-size: 32px;
+    margin: 0 12px;
+    background: #0D1017;
+    border-radius: 42px;
+    font-style: italic;
+    a {
+      width: inherit;
     }
   }
+}
+
+header.container {
+  padding: 56px 15px 30px;
 }
 
 .banner {
@@ -84,10 +108,144 @@ header.container {
     }
   }
 }
+
 .service {
-  padding: 88px 121px;
+  padding: 88px 15px 121px;
   h3 {
     font-size: 64px ;
+    font-style: italic;
+  }
+  ul {
+    li {
+      font-size: 140px;
+      font-style: italic;
+      position: relative;
+      padding-left: 80px;
+      &:first-child {
+        margin-left: 20px !important;
+      }
+      span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-style: normal;
+        font-size: 30px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: #272A31;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}
+@for $i from 1 through $lenght {
+  .service {
+    ul {
+      li:nth-child(#{$i}) {
+        margin-left: 50*$i + px;
+      }
+    }
+  }
+} 
+.skill {
+  h3 {
+    font-size: 64px ;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 80px;
+  }
+  .list-skill {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 -20px;
+    .skill {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background: #272A31;
+      margin: 0 20px 40px;
+      width: calc(20% - 40px);
+      height: 208px;
+      border-radius: 20px;
+      min-width: 308px;
+      cursor: pointer;
+      img {
+        margin-bottom: 25px;
+        width: 80px;
+        filter: grayscale(1);
+      }
+      &.active, &:hover {
+        img {
+          filter: grayscale(0);
+        }
+      }
+      p {
+        font-size: 24px;
+        font-style: italic;
+      }
+    }
+  }
+}
+.ribbon {
+  padding: 80px 0;
+  font-size: 96px;  
+  text-align: center;
+  white-space: nowrap;
+}
+.contact {
+  max-width: 1340px;
+  margin: auto;
+  h4 {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+  a {
+    position: relative;
+    display: block;
+    font-size: 40px;
+    padding: 40px 0;
+    border-bottom: 1px solid #61646B;
+    border-top: 1px solid #61646B;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      width: 25px;
+      height: 25px;
+      background-image: url('./../images/arrow-btn.png');
+      background-repeat: no-repeat;
+      background-size: 100%;
+    }
+  }
+}
+.message {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  padding: 98px 15px;
+  .content-mess {
+    font-size: 128px;
+    max-width: 1216px;
+    img {
+      width: 120px;
+      display: inline-block;
+    }
+  }
+}
+footer.container {
+  padding: 56px 15px;
+  border-top: 1px solid #1B1E25;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  p {
+    font-size: 24px;
     font-style: italic;
   }
 }

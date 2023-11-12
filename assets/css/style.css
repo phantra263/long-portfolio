@@ -2,11 +2,13 @@ body {
   font-family: "Bebas Neue", sans-serif;
   color: #FFFFFF;
   background: #03060D;
+  overflow-x: hidden;
 }
 
 .container {
   max-width: 1730px;
   padding: 0 15px;
+  margin: 0 auto;
 }
 
 a {
@@ -15,6 +17,7 @@ a {
 
 button {
   cursor: pointer;
+  border: 0;
 }
 
 input:focus {
@@ -29,19 +32,34 @@ input:focus {
   align-items: center;
   padding: 21px 16px 21px 46px;
   border-radius: 42px;
+  flex-shrink: 0;
 }
 .btn-scroll img {
   margin-left: 20px;
 }
 
-header.container {
-  padding: 56px 0 30px;
+#return-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #CF75D7;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: none;
+  text-align: center;
+  line-height: 50px;
+  color: #FFFFFF;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  z-index: 100;
 }
-header.container .navbar-nav {
+
+.navbar-nav {
   display: flex;
   justify-content: flex-end;
 }
-header.container .navbar-nav .nav-item {
+.navbar-nav .nav-item {
   padding: 20px 40px;
   font-size: 32px;
   margin: 0 12px;
@@ -49,8 +67,12 @@ header.container .navbar-nav .nav-item {
   border-radius: 42px;
   font-style: italic;
 }
-header.container .navbar-nav .nav-item a {
+.navbar-nav .nav-item a {
   width: inherit;
+}
+
+header.container {
+  padding: 56px 15px 30px;
 }
 
 .banner {
@@ -82,9 +104,148 @@ header.container .navbar-nav .nav-item a {
 }
 
 .service {
-  padding: 88px 121px;
+  padding: 88px 15px 121px;
 }
 .service h3 {
   font-size: 64px;
+  font-style: italic;
+}
+.service ul li {
+  font-size: 140px;
+  font-style: italic;
+  position: relative;
+  padding-left: 80px;
+}
+.service ul li:first-child {
+  margin-left: 20px !important;
+}
+.service ul li span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-style: normal;
+  font-size: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #272A31;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service ul li:nth-child(1) {
+  margin-left: 50px;
+}
+
+.service ul li:nth-child(2) {
+  margin-left: 100px;
+}
+
+.service ul li:nth-child(3) {
+  margin-left: 150px;
+}
+
+.service ul li:nth-child(4) {
+  margin-left: 200px;
+}
+
+.skill h3 {
+  font-size: 64px;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 80px;
+}
+.skill .list-skill {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 -20px;
+}
+.skill .list-skill .skill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: #272A31;
+  margin: 0 20px 40px;
+  width: calc(20% - 40px);
+  height: 208px;
+  border-radius: 20px;
+  min-width: 308px;
+  cursor: pointer;
+}
+.skill .list-skill .skill img {
+  margin-bottom: 25px;
+  width: 80px;
+  filter: grayscale(1);
+}
+.skill .list-skill .skill.active img, .skill .list-skill .skill:hover img {
+  filter: grayscale(0);
+}
+.skill .list-skill .skill p {
+  font-size: 24px;
+  font-style: italic;
+}
+
+.ribbon {
+  padding: 80px 0;
+  font-size: 96px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.contact {
+  max-width: 1340px;
+  margin: auto;
+}
+.contact h4 {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+.contact a {
+  position: relative;
+  display: block;
+  font-size: 40px;
+  padding: 40px 0;
+  border-bottom: 1px solid #61646B;
+  border-top: 1px solid #61646B;
+}
+.contact a::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  width: 25px;
+  height: 25px;
+  background-image: url("./../images/arrow-btn.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.message {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  padding: 98px 15px;
+}
+.message .content-mess {
+  font-size: 128px;
+  max-width: 1216px;
+}
+.message .content-mess img {
+  width: 120px;
+  display: inline-block;
+}
+
+footer.container {
+  padding: 56px 15px;
+  border-top: 1px solid #1B1E25;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer.container p {
+  font-size: 24px;
   font-style: italic;
 }/*# sourceMappingURL=style.css.map */
